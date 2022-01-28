@@ -14,7 +14,7 @@ const SUPABASE_URL = 'https://upmcxwbgkttzmimfscem.supabase.co';
 const supabase = createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
 
 function escutaMensagensEmTempoReal(adicionaNovaMensagem){
-    supabase.from('mensagens').on("INSERT", ({ respostaLive }) => {
+    supabase.from('mensagens').on("INSERT", (respostaLive) => {
         adicionaNovaMensagem(respostaLive.new);
 
     }).subscribe();
